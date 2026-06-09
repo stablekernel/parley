@@ -101,10 +101,10 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
    `turn`, update `last updated` / `by`.
 
 6. **Checkpoint + hand off.** The signature move:
-   > "Here's what I heard from you, here's my updated read, and here's what's now waiting
-   > on [next person] — any corrections before you send this on?"
-   Then **recommend the next recipient** (you recommend; the human routes). For 3+ people,
-   name the specific person whose open questions are now waiting.
+   > "Here's what I heard from you, here's my updated read, and here's what's still open —
+   > any corrections before you send this on?"
+   The open questions and their `posed to:` tags show what's still outstanding and to whom;
+   routing is the humans'.
 
 ## Guardrails (load-bearing — do not soften)
 
@@ -189,7 +189,7 @@ the Decision Target line. Exploration can legitimately resolve to "decided not t
 The schema already generalizes: the participant list grows, Open Questions carry a
 specific `posed to:`, and multiple questions can be outstanding to different people,
 answerable in any order. When answers return out of order, reconcile them on the next
-turn you see. You **recommend** the next recipient; humans do the routing.
+turn you see. Humans do the routing — you don't necessarily pick who goes next.
 
 ## Transport
 
