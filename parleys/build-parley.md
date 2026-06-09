@@ -52,6 +52,12 @@ operation (read each response in turn, accumulate into one artifact) with clear 
 Log attribution. Token cost of ingesting shared context N times is a concern — may be
 mitigated by caching. Left open for continued discussion.
 
+**Scope — known and accepted.** Parley's sweet spot is two people passing a file back and
+forth; a file in version control is nearly as good. It gets harder and more unwieldy the
+more participants you add — and that unwieldiness at scale is itself a sign that
+synchronous conversation still wins there. Parley is *not* a replacement for real-time
+conversation; it's for the async case where people genuinely can't all be in the room.
+
 My read: the design is converging toward something shippable. The remaining open questions
 (what parley should NOT be; bar for firm build; skill publishing; fan-out/fan-in) are about
 scope and distribution more than fundamental design. What's left to ship v1: update the
@@ -110,6 +116,10 @@ skill with newcomer orientation, create the new-parley bundle, push to GitHub.
 - [T3 · Kevin] On fan-out/fan-in: feels risky and messy to fan too wide; ingesting the same
   context N times burns tokens, though caching may mitigate it. Good topic for continued
   discussion — not resolved.
+- [T3 · Kevin] Known/accepted scope: parley works most solidly for two people passing a
+  file back and forth; a file in version control is almost as good. The more people added,
+  the more difficult and unwieldy it becomes — a sign that synchronous conversations still
+  win, and that parley is not a replacement for them.
 - [T3 · Kevin] HANDOFF.md should be deleted — it was the bootstrap document and is now
   superseded by the live artifact and the repo's README/skill.
 - [T3 · Claude] Synthesized newcomer orientation as three-case detection in step 2.
