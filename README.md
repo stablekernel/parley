@@ -33,14 +33,14 @@ live conversation, and a conversation can outlive any single session.
 
 ## Using it
 
-- **Start a parley:** just tell the agent what you want to work out — a sentence or a
-  brain-dump is plenty; it draws the rest out in conversation, no form to fill in. It creates
-  the artifact (in `parleys/<slug>.md` when there's a filesystem), and that opening
-  conversation *is* turn 1. You never touch a template.
 - **Start one anywhere, no skill installed:** paste the contents of
   `.claude/skills/parley/SKILL.md` into any AI chat and just say what you want to work out.
   The rules are self-contained, so it'll run the parley and hand you back an artifact to pass
   to whoever goes next.
+- **Start a parley:** just tell the agent what you want to work out — a sentence or a
+  brain-dump is plenty; it draws the rest out in conversation, no form to fill in. It creates
+  the artifact (in `parleys/<slug>.md` when there's a filesystem), and that opening
+  conversation *is* turn 1. You never touch a template.
 - **Continue one:** point the agent at the parley — it finds it in `parleys/`, or you paste
   it in — and say who you are. If you're new to the conversation it walks you through the
   reasoning and the live questions (not just the conclusions) so you can form your own view;
