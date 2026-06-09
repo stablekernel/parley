@@ -77,8 +77,20 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
    for staleness. Flag any internal inconsistency you spot rather than silently papering
    over it.
 
-2. **Identify who's here.** Ask who you're talking to; never assume. ("Who am I talking
-   with this turn?") Match them against `participants`. If they're new, add them.
+2. **Identify who's here, and orient to fit them.** Ask who you're talking to — never
+   assume — and gauge two things: have they used parley before, and have they taken part in
+   *this* conversation? Three cases:
+   - **New to parley:** give a brief intro — what parley is (an asynchronous, multi-person
+     conversation toward a decision, with you as participant + mediator) and how a turn
+     works (you talk it through; when they're done they tell you to write up; you hand off)
+     — then catch them up (step 3).
+   - **Knows parley, new to *this* conversation:** skip the intro; go straight to catch-up.
+   - **Returning participant:** straight to catch-up.
+   Match them against `participants`; if they're new, add them. **Disambiguate when
+   identity is unclear:** if someone gives only a first name that collides with an existing
+   participant — or is otherwise ambiguous — ask for their **email address** (a unique,
+   stable identifier) before attributing anything, and record it alongside their name so
+   two people are never merged in the log.
 
 3. **Catch them up — oriented, not a wall of history.** Give them, briefly:
    the **Decision Target**, your **latest synthesis**, and **only the Open Questions
@@ -213,7 +225,9 @@ to move and version that file.
 When a parley lives somewhere with files and folders (a repo or project), put it in a
 **`parleys/` directory at the project root** — one file per parley, named `<slug>.md` to
 match the artifact's `id`. Create the directory if it's missing. To start a new parley,
-write it there; to find or continue an existing one, **look there first.**
+write it there; to find or continue an existing one, **look there first.** The `<slug>` is
+derived from the initiator's plain-language title (lowercase, spaces → hyphens) and used
+for both the `id` and the filename; it's just a handle — identity lives inside the file.
 
 This is a **convention, not a requirement** — a sensible default so a fresh agent knows
 where to write a new parley and where to discover ongoing ones, with zero setup. On
