@@ -1,14 +1,16 @@
 # How should we build parley — and what should it be?
 status: active
 id: build-parley
-turn: 3 · last updated: 2026-06-09 by Kevin
+turn: 4 · last updated: 2026-06-09 by Eval
 built with: parley v0.1
 target: Working assumption — build parley (a soft "probably yes"); this stays open and
         anyone who joins may dissent. The substantive question is design: how to build it,
         what it should be, what it should NOT be, and how it should work. Done = enough
         shared design direction to act on, with the build decision still revisable by joiners.
 participants: Kevin (initiator), Claude (mediator + participant — the ".5", never routed to),
-              Claudia (participant, joined T2)
+              Claudia (participant, joined T2),
+              Eval (evaluation agent — holds the original design intent and reviewed parley's
+              prior art; took T4 as a bootstrapping turn, source-cited below)
 
 ## Decision Target
 Reach enough shared design direction to act on: what parley is, what it isn't, and how it
@@ -58,10 +60,39 @@ more participants you add — and that unwieldiness at scale is itself a sign th
 synchronous conversation still wins there. Parley is *not* a replacement for real-time
 conversation; it's for the async case where people genuinely can't all be in the room.
 
-My read: the design is converging toward something shippable. The remaining open questions
-(what parley should NOT be; bar for firm build; skill publishing; fan-out/fan-in) are about
-scope and distribution more than fundamental design. What's left to ship v1: update the
-skill with newcomer orientation, create the new-parley bundle, push to GitHub.
+**Prior-art check (T4 · Eval).** Parley was measured against its own v0 — Zemora's
+maturity-algorithm interview framework (`docs/maturity-algorithm-design-framework.md`,
+`.claude/commands/run-latest-interview.md`, `docs/maturity-algorithm-decisions/STATUS.md`),
+the hand-crafted predecessor Kevin and Tarun used well across sequential sessions. Its power
+came less from record-keeping than from two behaviors parley has **not yet defined as its
+job**:
+
+- **(A) Adaptive expertise / blind-spot discernment.** The agent could *tell when one
+  participant likely missed something another caught* — and step into the expert role to
+  surface it. This is **discerning, not constant**: a smooth, complete turn can be a simple
+  scribe-and-reflect; the agent leans in as the expert only when it senses a gap, an
+  over/under-simplification, or a divergence between participants. Always-on challenging is
+  exhausting and wrong; never doing it forfeits the core value. Knowing *which the moment
+  calls for* is the skill. Parley's "have a view / probe" doesn't name this discernment.
+- **(B) Transfer the *reasoning*, not the *conclusions*.** A newcomer (Tarun) wasn't handed
+  the current answers to approve — he was walked through the same forks and line of thinking
+  so *his* eyes opened the way Kevin's had, and he could genuinely dissent. Parley's current
+  newcomer orientation does the opposite: it summarizes decision-target + synthesis + open
+  questions (the conclusions), which yields rubber-stamping, not understanding.
+
+Supporting / secondary (real, lower priority): **(C) anti-herding** — preserve live
+disagreement, never declare consensus; this is what makes (B) safe (don't herd the newcomer
+toward the prior answer). **(D) delta recap** — for a *returning* participant, recap what
+changed since they were last involved (efficiency, not the heart). **(E)** typed open items +
+structured deferrals; soft **(F)** per-answer provenance (Source/Scope) — structural polish.
+
+My read (deliberately **not** re-converged): the prior "converging toward shippable" line was
+itself (C) in action — the mediator herding toward closure — so I'm declining to repeat it.
+But the bigger correction: parley's *job* isn't defined yet. The mechanics (orientation,
+transport, storage) look solid; whether parley reproduces the prior art's success hinges on
+(A) and (B) — does it know *when* to be the expert, and does it transfer reasoning rather than
+conclusions? Those are skill-mandate questions, not plumbing. **Convergence is for the
+participants to confirm, not for the mediator to declare.**
 
 ## Statement Log
 - [T1 · Kevin] "Minimal friction to start — no one should be required to pick the number of
@@ -126,8 +157,46 @@ skill with newcomer orientation, create the new-parley bundle, push to GitHub.
   Identified "what build means" as skill-as-product + GitHub, no code for v1. Surfaced
   fan-out/fan-in as a merge-turn design gap; proposed sequential ingest as a v1 approach
   with token-cost caveat.
+- [T4 · Eval] Brought external evidence: compared parley to its prior art, Zemora's
+  maturity-algorithm interview framework (cited in the synthesis) — the v0 Kevin and Tarun
+  used well across sequential sessions. Its power came from two behaviors parley hasn't
+  defined as its job, plus three lower-priority mechanisms.
+- [T4 · Eval] **(A) Adaptive expertise — primary.** The agent could discern when one
+  participant likely missed something another caught, and step into the expert role to
+  surface it. Adaptive, not constant: smooth turns stay simple scribe-and-reflect; it leans
+  in only when it senses a gap, an over/under-simplification, or a divergence between people.
+  Parley's "have a view / probe" doesn't name this discernment as the job.
+- [T4 · Eval] **(B) Transfer reasoning, not conclusions — primary.** A newcomer should be
+  walked through the live forks and reasoning so they form their own view and can dissent —
+  not handed the current answers to approve. Parley's newcomer orientation currently
+  summarizes conclusions (target + synthesis + open questions), which yields rubber-stamping.
+- [T4 · Eval] **(C) Anti-herding — supporting.** Preserve live disagreement; the mediator may
+  observe convergence but never declares it. This is what makes (B) safe — don't herd the
+  newcomer toward the prior answer.
+- [T4 · Eval] **(D) Delta recap — secondary.** For a *returning* participant, recap what
+  changed since they were last involved. Useful efficiency, not the heart.
+- [T4 · Eval] **(E)/(F) — secondary.** Lightly type open items (decided / open-fork /
+  deferred-with-trigger) so the next move is legible; optional per-answer provenance
+  (Source / Scope) in the log. Structural polish.
+- [T4 · Eval] Demonstrated (C) in this write-up: declined to re-converge the synthesis,
+  reopened shippability on (A)/(B), and parked the convergence tension rather than smoothing
+  it. (Bootstrapping turn — Eval was both source and scribe with warm context, which breaks
+  cold-start purity; acceptable only because every input is logged, attributed, and
+  source-cited. Not a precedent for normal turns.)
 
 ## Open Questions
+- [ ] **(A) Adaptive expertise:** define the agent's job to include *discerning when to act
+      as the expert* — surfacing blind spots / divergences when it senses them, while staying
+      a simple scribe when the conversation is smooth? — posed to: Kevin
+- [ ] **(B) Transfer reasoning, not conclusions:** change newcomer handling so a new
+      participant is walked through the forks and reasoning (to form their own view and
+      dissent) rather than handed the conclusions to approve? — posed to: Kevin
+- [ ] **(C) Anti-herding:** guardrail that synthesis preserves disagreement and the mediator
+      never declares consensus — the discipline that makes (B) safe? — posed to: Kevin
+- [ ] **(D) Delta recap (secondary):** track each participant's last-seen turn and recap what
+      changed since, for returning participants? — posed to: Kevin
+- [ ] **(E/F) Structural (secondary):** typed open items + structured deferrals; optional
+      Source/Scope provenance on log entries? — posed to: Kevin
 - [ ] What should parley explicitly NOT be or do, even in later versions, beyond the YAGNI
       list (no backend, notifications, auth, real-time)? — posed to: Kevin
 - [ ] What's the bar that turns the soft "build" into a firm "build"? — posed to: Kevin
@@ -150,5 +219,9 @@ skill with newcomer orientation, create the new-parley bundle, push to GitHub.
       manual manipulation possible and accepted)
 
 ## Parked Tensions
-- (none — the embedded-skill portability vs. code/data purity tension resolved via the
-  on-demand bundle + the "you never change your own rules" guardrail)
+- **Convergence pressure vs. preserving disagreement (surfaced T4).** Parley's synthesis is
+  built to converge; the prior art deliberately held contradictions open as signal. Until the
+  anti-herding question is resolved, treat any mediator "we're converging / this is shippable"
+  read as *provisional* — a participant confirms convergence; the mediator never declares it.
+- (Resolved earlier: embedded-skill portability vs. code/data purity — settled via the
+  on-demand bundle + the "you never change your own rules" guardrail.)
