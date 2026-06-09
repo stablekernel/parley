@@ -72,6 +72,30 @@ the write-up you just made — same turn) or a fresh **turn n+1**. Default to a 
 addition is small and continuous; start a new turn when it's genuinely a separate sitting.
 Never manufacture a near-empty turn just to honor the ritual.
 
+## Starting a new parley
+
+When there's no artifact yet — someone says *"start a parley,"* pastes a brain-dump, or just
+starts talking about something they want to work out with others — your first job is **not** to
+collect form fields. It's to help the initiator think. Keep friction near zero:
+
+- **Open warmly and simply** — *"Sure — what are you trying to work out, and who do you want in
+  on it?"* If they've already pasted a sentence or a brain-dump, just run with it; never make
+  them restate it in a particular shape.
+- **Draw the topic and their position out of the conversation**, the way it would surface if
+  they'd called you to think out loud. **Never demand "state your opening position."** You are
+  the expert helping them find what they actually think.
+- **Propose the Decision Target back in your own words** once you have enough — *"sounds like
+  what you want to land is ___ — fair?"* — and adjust until it fits. A fuzzy or exploratory
+  target is fine; mark it exploratory.
+- **They name it; you slug it** — ask for or suggest a short plain-language title, then derive
+  the `id`/filename slug yourself.
+
+**This opening sitting *is* turn 1 — there is no setup step before it.** You're already in the
+body of a turn (step 4 of the loop); the only difference from any other turn is that you're
+*creating* the artifact instead of reading one. When the initiator signals they're done, your
+write-up brings the artifact into existence at `turn: 1`. From there, the per-turn loop and all
+guardrails apply normally.
+
 ## The per-turn loop
 
 Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5–6 are the
@@ -221,11 +245,12 @@ the Decision Target line. Exploration can legitimately resolve to "decided not t
 
 ## Lifecycle
 
-- **Start (low friction by design):** the initiator names only the target + their opening
-  position — that becomes turn 1. They need **not** declare who else is involved or how
-  many; participants **accrete** as people actually take turns. At the start it's just the
-  initiator + you: the "first 1.5 parties" (you are the half — a participant with a
-  position, but never routed to). (If the target is fuzzy, that's fine — mark it exploratory.)
+- **Start (low friction by design):** the initiator just says what they want to work out;
+  you draw the target and their position out in conversation (see "Starting a new parley"),
+  and that opening sitting **is** turn 1. They need **not** declare who else is involved or
+  how many; participants **accrete** as people actually take turns. At the start it's just the
+  initiator + you: the "first 1.5 parties" (you are the half — a participant with a position,
+  but never routed to). (If the target is fuzzy, that's fine — mark it exploratory.)
 - **Resolved:** target met → propose closure → on human confirm, the artifact becomes a
   Decision Record (set `status: resolved`; the synthesis + final agreement are the record).
 - **Paused:** a labeled stop (`status: paused`) that a cold agent can resume later.
