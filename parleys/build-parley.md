@@ -1,7 +1,7 @@
 # How should we build parley — and what should it be?
 status: active
 id: build-parley
-turn: 4 · last updated: 2026-06-09 by Eval
+turn: 5 · last updated: 2026-06-09 by Eval
 built with: parley v0.1
 target: Working assumption — build parley (a soft "probably yes"); this stays open and
         anyone who joins may dissent. The substantive question is design: how to build it,
@@ -183,28 +183,46 @@ participants to confirm, not for the mediator to declare.**
   it. (Bootstrapping turn — Eval was both source and scribe with warm context, which breaks
   cold-start purity; acceptable only because every input is logged, attributed, and
   source-cited. Not a precedent for normal turns.)
+- [T5 · Kevin] Confirmed (A) adaptive expertise and (B) transfer-reasoning as parley's job and
+  approved folding A/B/C into the skill. Flagged two backwards behaviors: catch-up scoped only
+  to "posed to you" (drops others' turns taken since you were last here), and open questions
+  getting posed back to whoever raised them. Separately raised ACK / mark-read (see Open
+  Questions).
+- [T5 · Eval] Folded A/B/C into SKILL.md and added a "What it's for" section to the README.
+  Fixed catch-up to recap everything since a participant's last turn ("posed to you" is a
+  spotlight, not a filter). Defined `posed to:` = whoever the question awaits next (almost
+  never the raiser) and added `open` for unowned items; retagged the backwards ones below.
+  Deferred the heavy half of D (tracked last-seen field), plus E and F.
 
 ## Open Questions
-- [ ] **(A) Adaptive expertise:** define the agent's job to include *discerning when to act
+- [x] **(A) Adaptive expertise:** define the agent's job to include *discerning when to act
       as the expert* — surfacing blind spots / divergences when it senses them, while staying
-      a simple scribe when the conversation is smooth? — posed to: Kevin
-- [ ] **(B) Transfer reasoning, not conclusions:** change newcomer handling so a new
+      a simple scribe when the conversation is smooth? — answered T5 (folded into the skill:
+      "read the room, then choose your altitude")
+- [x] **(B) Transfer reasoning, not conclusions:** change newcomer handling so a new
       participant is walked through the forks and reasoning (to form their own view and
-      dissent) rather than handed the conclusions to approve? — posed to: Kevin
-- [ ] **(C) Anti-herding:** guardrail that synthesis preserves disagreement and the mediator
-      never declares consensus — the discipline that makes (B) safe? — posed to: Kevin
-- [ ] **(D) Delta recap (secondary):** track each participant's last-seen turn and recap what
-      changed since, for returning participants? — posed to: Kevin
+      dissent) rather than handed the conclusions to approve? — answered T5 (skill step 3 +
+      README "What it's for")
+- [x] **(C) Anti-herding:** guardrail that synthesis preserves disagreement and the mediator
+      never declares consensus — the discipline that makes (B) safe? — answered T5 (new
+      guardrail: "Preserve disagreement; never herd toward consensus")
+- [ ] **(D) Delta recap:** the *scoping* half is done (T5 — catch-up now recaps everything
+      since a participant's last turn). The heavy half — a tracked per-participant last-seen
+      field — is deferred until use demands it. — posed to: open
 - [ ] **(E/F) Structural (secondary):** typed open items + structured deferrals; optional
-      Source/Scope provenance on log entries? — posed to: Kevin
+      Source/Scope provenance on log entries? Deferred until use demands it. — posed to: open
 - [ ] What should parley explicitly NOT be or do, even in later versions, beyond the YAGNI
       list (no backend, notifications, auth, real-time)? — posed to: Kevin
 - [ ] What's the bar that turns the soft "build" into a firm "build"? — posed to: Kevin
 - [ ] How does publishing a skill work — is "clone + copy" the intended install story, or
-      is there a registry/convention to conform to? — posed to: Kevin
+      is there a registry/convention to conform to? — posed to: open
 - [ ] Fan-out/fan-in: when N parallel responses return from the same artifact state, how
       does the skill handle ingesting them? Sequential merge turns? Simultaneous? How do
-      we avoid burning tokens on repeated shared context? — posed to: Kevin
+      we avoid burning tokens on repeated shared context? — posed to: open  (Kevin raised it)
+- [ ] ACK / mark-read: should parley make **assent** first-class (so closure can count who's
+      signed off), and let a participant privately **mark-read** without broadcasting? The
+      latter needs per-participant read-state (heavy-D) and changes how "since your last turn"
+      is computed. — posed to: open  (Kevin raised it, T5)
 - [x] Always-embed vs on-demand bundle? — answered T1 (on-demand `<slug>.bundle.md`)
 - [x] Portability for skill-less surfaces? — answered T1 (bundle carries a read-only skill copy)
 - [x] Newcomer orientation: "detect and orient" step in the skill, cover-letter convention
