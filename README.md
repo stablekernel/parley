@@ -30,8 +30,9 @@ live conversation, and a conversation can outlive any single session.
   read. Then you pass the parley to whoever goes next.
 - **Transport:** paste/send the artifact however your team already communicates. A shared
   file location works too — it's the same thing with nicer storage.
-- **Non-installable surfaces (Slack/Chat):** the skill can be delivered as a pasteable
-  preamble, or the agent can export `[skill] + [artifact]` as one blob for paste-only users.
+- **Non-installable surfaces (Slack/Chat):** the agent can export the parley as a **bundle**
+  — a single `<slug>.bundle.md` file holding a read-only copy of the skill plus the
+  artifact — so someone with no skill installed can paste it in and pick up the conversation.
 
 ## Layout
 
