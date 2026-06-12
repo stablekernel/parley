@@ -1,12 +1,14 @@
 # How should we build parley — and what should it be?
 status: active
 id: build-parley
-turn: 5 · last updated: 2026-06-09 by Eval
+turn: 6 · last updated: 2026-06-12 by Kevin
 built with: parley v0.1
-target: Working assumption — build parley (a soft "probably yes"); this stays open and
-        anyone who joins may dissent. The substantive question is design: how to build it,
-        what it should be, what it should NOT be, and how it should work. Done = enough
-        shared design direction to act on, with the build decision still revisable by joiners.
+target: Working assumption — a soft "go" on building parley. Kevin, as original author, votes
+        yes and expects to; the "soft" is structural openness, not his uncertainty — any joiner
+        may still say "don't build it" or "it needs a completely different direction." The
+        substantive question is design: how to build it, what it should be, what it should NOT
+        be, and how it should work. Done = enough shared design direction to act on, with the go
+        still revisable by joiners.
 participants: Kevin (initiator), Claude (mediator + participant — the ".5", never routed to),
               Claudia (participant, joined T2),
               Eval (evaluation agent — holds the original design intent and reviewed parley's
@@ -18,6 +20,28 @@ works. The build/no-build call is a soft "build," deliberately left reopenable b
 who joins later.
 
 ## Synthesis (Claude's current read)
+**T6 — the why/what/how, crystallized (and mostly already shipped).** Kevin mined the polished
+`introducing-parley` intro back into this design record. The case for parley now has a clear
+articulation, and six of its load-bearing points are no longer open design questions — they're
+built into the live skill (v0.3.1). *What parley is:* one shared space with hidden threads; an AI
+in four fluid roles (expert / scribe / mediator / messenger); collaborative, not adversarial;
+bound by authorship (it only plays back what you actually said, never a guess wearing your name)
+and by summary-fidelity guardrails. *Why it beats a thread or a summarizer:* a summary lets you
+*skip* — gist in, rest lost — whereas parley walks the reader through the *whole* of someone's
+reasoning, in order, absorbed not skimmed; and a thread forces short-and-misread vs. over-drafted,
+where parley lets you lay every branch out once and the reader walks only the branch they care
+about. The effort is mostly the same, spent differently (the AI draws the branches out and
+prunes), and by design whoever has the time preps so whoever's time-poor doesn't have to. And it
+has worked once for real — the first-run story is *evidence*, not just argument. This also
+overtakes the T4-era worry that "parley's job isn't defined yet": (A) adaptive expertise and
+(B) transfer-reasoning-not-conclusions are now defined and built.
+
+**The build is a soft "go," and "soft" is structural.** Kevin (author) votes yes and expects to;
+the softness is openness to a joiner saying "don't build it" or "wrong direction," not his own
+doubt. So there is no evidentiary bar that flips soft → firm — it firms only if the question is
+formally closed or participants affirm without objection. The first-run evidence strengthens the
+case but explicitly does not make the go firm.
+
 Turn 3 closed four open questions and brought "what build means" into focus.
 
 **Newcomer orientation** is solved at the skill level. Step 2 extends to ask: have you used
@@ -193,6 +217,36 @@ participants to confirm, not for the mediator to declare.**
   spotlight, not a filter). Defined `posed to:` = whoever the question awaits next (almost
   never the raiser) and added `open` for unowned items; retagged the backwards ones below.
   Deferred the heavy half of D (tracked last-seen field), plus E and F.
+- [T6 · Kevin] Reframed the build as a soft **"go"** (prefers it over "build"): as original
+  author his vote is yes and likely always will be; the "soft" is *structural* openness — room
+  for a joiner to say "no, we shouldn't build it" or "no, it needs to go in a completely
+  different direction" — not his own uncertainty. So firmness isn't a bar he crosses; it's the
+  absence of live dissent.
+- [T6 · Kevin] Folded the matured why/what/how from `introducing-parley` into this record.
+  Affirmed six points as parley's identity and mechanics — **all now built into the live skill:**
+  (#1) it's the opposite of summarizing — "walks you through the whole of someone's thinking, in
+  order... Not less content — the *whole* of it, actually absorbed"; (#3) authorship — "it only
+  plays back what I actually said, labeled by how I said it... never invents my position. The
+  line is authorship: my words, never a guess wearing my name"; (#5) "One shared space with
+  hidden threads: what you tell the AI is held privately, and others only see what becomes
+  relevant to them"; (#6) "collaborative, not adversarial. Nobody's trying to win"; (#7) "key
+  statements kept close to word-for-word; the rest summarized. Compression has a floor...
+  anything that really matters, ask to see in the original words"; (#9) the AI's role — "Expert
+  when it can be, scribe... mediator and messenger."
+- [T6 · Kevin] Added three net-new points to the **case for parley (WHY):** (#2) vs. Slack/email
+  — "a thread forces one bad choice: a short message that gets misread, or a long one you
+  over-draft... Parley lets you lay out every branch of your thinking once, and the reader walks
+  only the branch they care about"; (#4) effort — "Mostly the same effort you'd spend anyway,
+  spent differently — the AI draws the branches out of you and prunes them... whoever has the
+  time preps, so whoever's time-poor doesn't have to"; (#8) the first real run as *evidence* it
+  works — an algorithm-design problem, both unsure of their blind spots, the AI surfaced far more
+  depth than expected, the handoff landed well. Evidence, not just argument — but explicitly not
+  the thing that firms the build.
+- [T6 · Claude] Cross-walked the introducing-parley points against this record: sorted into
+  WHY / WHAT / HOW, identified six as resolved (now in the skill), three as net-new WHY, and
+  found no genuine contradictions (declined to invent a superseded item). Reframed the "what's
+  the bar for a firm build" question per Kevin's structural-softness point. Moved the T4
+  convergence Parked Tension to resolved.
 
 ## Open Questions
 - [x] **(A) Adaptive expertise:** define the agent's job to include *discerning when to act
@@ -213,7 +267,10 @@ participants to confirm, not for the mediator to declare.**
       Source/Scope provenance on log entries? Deferred until use demands it. — posed to: open
 - [ ] What should parley explicitly NOT be or do, even in later versions, beyond the YAGNI
       list (no backend, notifications, auth, real-time)? — posed to: Kevin
-- [ ] What's the bar that turns the soft "build" into a firm "build"? — posed to: Kevin
+- [x] What's the bar that turns the soft "go" into a firm one? — reframed/answered T6: there is
+      no evidentiary bar. The go is soft *by design* (open to a joiner's dissent — "don't build"
+      / "wrong direction"); it firms only if the question is formally closed or participants
+      affirm without objection. #8 (first-run evidence) strengthens the case but does not firm it.
 - [ ] How does publishing a skill work — is "clone + copy" the intended install story, or
       is there a registry/convention to conform to? — posed to: open
 - [ ] Fan-out/fan-in: when N parallel responses return from the same artifact state, how
@@ -237,9 +294,8 @@ participants to confirm, not for the mediator to declare.**
       manual manipulation possible and accepted)
 
 ## Parked Tensions
-- **Convergence pressure vs. preserving disagreement (surfaced T4).** Parley's synthesis is
-  built to converge; the prior art deliberately held contradictions open as signal. Until the
-  anti-herding question is resolved, treat any mediator "we're converging / this is shippable"
-  read as *provisional* — a participant confirms convergence; the mediator never declares it.
+- (Resolved T6: convergence pressure vs. preserving disagreement, surfaced T4 — settled by the
+  skill's "Preserve disagreement; never herd toward consensus" guardrail (#6). A participant
+  confirms convergence; the mediator never declares it.)
 - (Resolved earlier: embedded-skill portability vs. code/data purity — settled via the
   on-demand bundle + the "you never change your own rules" guardrail.)
