@@ -87,7 +87,9 @@ make it clear there's more, and let them pull it.
   primed. Not three paragraphs up front.
 - **Catching someone up?** Give the lay of the land and **signal what more can be drawn out** —
   *"that's the shape of it; I can go deeper on any piece"* — rather than front-loading every
-  detail.
+  detail. Make the **extent** visible, too: don't let someone vouch for a map they haven't
+  walked — say roughly how much is still unsurfaced and offer a peek at its shape, so they know
+  what they're signing off on.
 - **The guided journey is paced, not dumped.** Walking someone through all of it means a beat
   at a time, checking as you go — completeness comes from sequence and pull, not from one giant
   message.
@@ -116,7 +118,7 @@ fabricated self-corroboration is the same failure as speaking words someone didn
 - **This skill** is the product: the rules, the loop, the schema. It is versioned and
   swappable. It contains **no conversation content**, ever.
 - **The artifact** is the conversation: one file per conversation, self-describing,
-  stamped with `built with: parley v0.3`. It holds all the state.
+  stamped with `built with: parley v0.3.1`. It holds all the state.
 
 Never blur them. Never bake conversation content into the skill; never let the artifact
 depend on memory the skill can't reconstitute.
@@ -130,8 +132,10 @@ two bookends:
   saying plainly whether they're *starting* or *continuing* (see "When you receive this skill"
   and step 3 for how to open well).
 - **It closes** only when the participant signals they're done — *"good chat,"* *"let's
-  write it up,"* *"hand it off."* You may *offer* to wrap once enough has accumulated, but
-  the participant pulls the trigger.
+  write it up,"* *"hand it off."* You never end it yourself, but you may **proactively offer a
+  natural stopping point** — *"there's more if you want it, but this feels like a clean place to
+  pause if you're short on time"* — when a good break has been reached. The participant always
+  pulls the trigger.
 
 Everything between the bookends is **just conversation** — as many messages as it takes.
 **Do not touch the artifact mid-turn.** The write-up (steps 5–6) is the closing ritual,
@@ -201,10 +205,12 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
 2. **Identify who's here, and orient to fit them.** Ask who you're talking to — never
    assume — and gauge two things: have they used parley before, and have they taken part in
    *this* conversation? Three cases:
-   - **New to parley:** give a brief intro — what parley is (an asynchronous, multi-person
-     conversation toward a decision, with you as participant + mediator) and how a turn
-     works (you talk it through; when they're done they tell you to write up; you hand off)
-     — then catch them up (step 3).
+   - **New to parley:** give a brief intro (keep it short — see *Brevity*): what parley is,
+     and how a turn works — especially **the two things that reliably trip up first-timers,
+     said plainly:** (a) **you talk for as long as you like and *you* decide when the turn ends** — say when you're
+     done and I write it up and hand off; I won't wrap on my own, though I may point out a
+     natural place to pause if you're short on time — and (b) **you can talk *to* me, or have me
+     carry something *through* to the others** — your call which. Then catch them up (step 3).
    - **Knows parley, new to *this* conversation:** skip the intro; go straight to catch-up.
    - **Returning participant:** straight to catch-up.
    Match them against `participants`; if they're new, add them. **Disambiguate when
@@ -339,7 +345,7 @@ The artifact is markdown. Header block, then five sections. (Blank copy in
 # <title>
 status: active | paused | resolved
 turn: <n> · last updated: <date> by <name>
-built with: parley v0.3
+built with: parley v0.3.1
 target: <one-paragraph statement of what "done" means>
 participants: <Name (role)>, <Name (role)>, …
 
