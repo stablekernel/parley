@@ -3,11 +3,11 @@
 A realistic decision: two leaders deciding whether to sunset a legacy mobile app. This is
 the artifact *as it stands after turn 3*. Use it to ground the schema and the voice.
 
-```markdown
+~~~markdown
 # Sunset the legacy v1 mobile app?
 status: active
 turn: 3 · last updated: 2026-06-08 by Maya
-built with: parley v0.2
+built with: parley v0.3
 target: Decide whether to fully sunset the v1 mobile app by end of Q3, keep
         maintaining it, or pick a middle path. "Done" = both Maya and Dev agree
         on one path + a rough timeline.
@@ -45,7 +45,7 @@ don't yet have. That estimate is the real blocker, not the strategy.
 ## Parked Tensions
 - (none yet — the focus-vs-revenue tension looks reconcilable via a staged path,
   pending the migration estimate)
-```
+~~~
 
 What this example demonstrates:
 - **Synthesis is clearly the agent's own voice** and takes a real position ("my read: a
