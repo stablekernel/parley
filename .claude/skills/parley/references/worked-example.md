@@ -7,7 +7,7 @@ the artifact *as it stands after turn 3*. Use it to ground the schema and the vo
 # Sunset the legacy v1 mobile app?
 status: active
 turn: 3 · last updated: 2026-06-08 by Maya
-built with: parley v0.1
+built with: parley v0.2
 target: Decide whether to fully sunset the v1 mobile app by end of Q3, keep
         maintaining it, or pick a middle path. "Done" = both Maya and Dev agree
         on one path + a rough timeline.

@@ -1,7 +1,7 @@
 # <Conversation title — phrase it as the question or decision>
 status: active
 turn: 1 · last updated: <YYYY-MM-DD> by <Initiator>
-built with: parley v0.1
+built with: parley v0.2
 target: <One paragraph. What decision is being made, and what counts as "done"?
         For open-ended exploration, say so explicitly.>
 participants: <Initiator (role)>, Agent (mediator + participant — never routed to)
