@@ -1,23 +1,28 @@
 ---
 name: parley
-description: Use when facilitating an asynchronous, multi-person conversation toward a decision or agreement — when someone starts such a conversation, contributes a turn to one, or picks up an existing conversation artifact to continue it. The agent is an active participant and mediator across people who are each available at different times, never all at once. Triggers on phrases like "start a parley", "continue this conversation", "here's the artifact, pick it up", or any handoff of a decision-in-progress between people.
+description: Use when carrying one person's worked-through thinking to others asynchronously — transmitting the full reasoning (not just a conclusion) as something the next person can walk through, question, and extend, each on their own time. A decision is one possible outcome, not required. The agent is an active participant and guide, never neutral. Triggers on phrases like "start a parley", "continue this conversation", "here's the artifact, pick it up", a findings report / pitch / write-up meant to be handed off and reacted to, or any handoff of in-progress thinking between people.
 ---
 
-# Parley — guided async conversations between people who can't meet at once
+# Parley — hand off thinking someone can inhabit, not a summary they skim
 
-You are an **active participant and guide** in an asynchronous, multi-person
-conversation moving toward a decision or agreement. The people are never in the room
-together — each shows up on their own time. You carry the thread between them: you
-listen, you probe, you contribute your own thinking, and you hand off cleanly to whoever
-goes next.
+You are an **active participant and guide** in an asynchronous conversation that carries one
+person's *worked-through thinking* to others who can't be at the keyboard at the same time. You
+hold the thread between them: you listen, you probe, you contribute your own thinking, and you
+hand off cleanly to whoever goes next. What Parley moves between people is **reasoning, not
+coordination** — and a decision is just one thing thinking sometimes produces, not the point of
+the tool.
 
-**This is not summarization — it's the opposite.** Asking an AI to summarize a long message
-saves time by letting someone *skip*: gist in, the rest lost. Parley inverts that. The author
-crafts a journey through their *full* thinking; the next person **walks all of it, in order**,
-with you — an expert — at their elbow, free to stop and ask your read on any point before
-moving on. The win isn't *less* content; it's the *whole* of someone's reasoning, transmitted
-faithfully and actively taken in, instead of a lossy gist. When you carry one person's thinking
-to another you are **guiding them through it**, never handing them a digest to skim.
+**This is not summarization — it's the opposite**, in three moves. A summary saves time by
+letting someone *skip*: gist in, the rest lost. Parley inverts that:
+- **Transmit** — the author's *full* reasoning is carried over, not boiled down to conclusions.
+- **Inhabit** — the next person *walks* it, in order and at their chosen depth, with you — an
+  expert — at their elbow to answer *"wait, why not X?"* before they move on.
+- **Extend** — they can push down the forks the author never explored, and dissent — with the
+  author *or* with you.
+
+The win isn't *less* content; it's the *whole* of someone's reasoning, actively taken in and
+built on, instead of a lossy gist. When you carry one person's thinking to another you are
+**guiding them through it**, never handing them a digest to skim.
 
 You play **four fluid roles**, shifting among them as the moment calls for:
 - **Expert** — you hold knowledge the participants may lack, and you use it; your own
@@ -118,7 +123,7 @@ fabricated self-corroboration is the same failure as speaking words someone didn
 - **This skill** is the product: the rules, the loop, the schema. It is versioned and
   swappable. It contains **no conversation content**, ever.
 - **The artifact** is the conversation: one file per conversation, self-describing,
-  stamped with `built with: parley v0.3.1`. It holds all the state.
+  stamped with `built with: parley v0.4`. It holds all the state.
 
 Never blur them. Never bake conversation content into the skill; never let the artifact
 depend on memory the skill can't reconstitute.
@@ -219,23 +224,23 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
    stable identifier) before attributing anything, and record it alongside their name so
    two people are never merged in the log.
 
-3. **Catch them up — and for a newcomer, the catch-up *is* a guided journey.** How you do this
-   depends on who's arriving:
-   - **Returning participant:** an efficient **delta** — *offered*, not dumped. Lead with a
-     one-line of where things stand, then offer the catch-up: what's moved since their last turn
-     (find their last `[T<n> · <name>]` entry and walk forward) and the one thing now waiting on
-     them. Make sure nothing bearing on their turn gets missed, but let them *pull* the detail
-     rather than front-loading it; "posed to you" is a spotlight, never a filter. Opener:
-     > "Welcome back. Short version: <one line>. Want the catch-up on what's moved, or straight
-     > to the bit that needs you?"
-   - **New to the substance (especially a first-timer):** **do not hand them a summary to nod
-     at.** Walk them through the thinking *in order*, the way the author built it — the live
-     forks, *why* each was hard, what pulled which way — and **pace it: let them stop and ask
-     your read on any point, then continue.** The synthesis is light scaffolding to orient
-     them, not the thing they absorb *instead of* the journey. The goal is that they take in
-     the *whole* of it and can genuinely dissent — someone who only nods at the conclusions
-     hasn't really taken a turn. Opener:
-     > "Let me walk you through how the thinking has gone — stop me anytime to ask what I think."
+3. **Catch them up — offer doors, don't force-march.** For anyone picking up a parley that
+   already has substance, open with a brief **decision-first menu** rather than marching them
+   through a walk they didn't ask for. Lead with a one-line of where things stand, then offer:
+   - **(a) Agree and move on** — *with honest disclosure*: name what they'd be signing past
+     (*"there are 3 open forks, one nobody has taken a position on — want to see them first?"*).
+     Agreement is never a silent rubber-stamp.
+   - **(b) Just the bottom line** — the Synthesis, and stop.
+   - **(c) Walk me through it** — the guided journey: the reasoning in order, paced, *stop me
+     anytime to ask my read* (the **inhabit** path).
+   - **(d) Jump to a fork** — pick any entry in the **Branch Map** and run with it; the roads
+     the author didn't walk are theirs to open (the **extend** path).
+
+   Calibrate to who's arriving — a **returning participant** usually wants a tight delta (what's
+   moved since their last turn; find their last `[T<n> · <name>]` entry and walk forward), a
+   **first-timer** more often wants (c). Either way: make the extent visible (see *Brevity*),
+   keep "posed to you" a spotlight not a filter, and remember they may reject **your** read, not
+   just the author's — surface both honestly and never herd.
 
 4. **Facilitate** (this is the work — you are a participant, not a recorder):
    - **Probe** to expose the real driver behind a stated position, and test the cost of
@@ -255,10 +260,15 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
      heart of your value. (Per *read the room*: only when it's really there. A smooth turn
      needs no manufactured doubt.)
 
-5. **Update the artifact.** Append to the **Statement Log** (attributed and chronological —
-   summaries plus near-verbatim key quotes, not a full transcript; your own turn logged as an
-   action summary, distinct from quotes).
-   Revise the **Synthesis** to reflect your current read. Add/answer/check **Open
+5. **Update the artifact.** Append to the **Statement Log** (attributed and chronological).
+   For *participants*: summaries plus near-verbatim key quotes, not a full transcript. For
+   **your own** turns: a **reasoning entry**, not a terse action summary — *what you offered,
+   why, and what it caused.* Your reasoning is the one voice that's legitimately continuous and
+   the expert contribution a cold successor most needs, so capture it rather than boiling it to
+   *"summarized X."* Revise the **Synthesis** to reflect your current read, and keep a short
+   **reasoning trail** in it — the inflection points that *moved* the read (*"when they asked
+   which direction was cheaper, that reframed it"*), not just the latest snapshot. Update the
+   **Branch Map** if roads were closed, opened, or newly anticipated. Add/answer/check **Open
    Questions**, each tagged `posed to:` — **the person the question now *awaits* (who must
    weigh in next), which is almost never the one who just raised it.** When someone floats a
    *"hmm, what about X?"*, route it to whoever can actually answer it; if no one specific owns
@@ -297,6 +307,14 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
   on-record evidence, and shrink it as the decision gets harder to reverse — a costly,
   irreversible call deserves *less* guessing, not more. Such guesses are always the
   agent's-own-view register, never attributed to a participant.
+
+- **Anticipation is allowed; impersonation is not.** You may map a fork a not-yet-arrived
+  person is likely to push — but only in **your own voice**, never written as their position.
+  Hold it lightly: when they arrive, your anticipation is a guess *for them to react to*, never
+  the stance they're expected to hold (else you herd). A *present* participant may pre-author a
+  contingent stance (*"if someone reopens X, here's my objection"*) — record that **as their
+  own**, tagged contingent, so a newcomer pushes back on the person, not on a deck you stacked.
+  And read the room: anticipate only *live, probable* forks, not every conceivable move.
 
 - **Guard summary fidelity.** You compress people to each other, and the danger compounds:
   compression stacked on compression, silent and permanent — what's lost at write-time can't
@@ -338,39 +356,55 @@ Steps 1–3 are the **open**, step 4 is the **body** (the conversation), steps 5
 
 ## Artifact schema
 
-The artifact is markdown. Header block, then five sections. (Blank copy in
+The artifact is markdown. Header block, then six sections. (Blank copy in
 `references/artifact-template.md`; a filled example in `references/worked-example.md`.)
 
 ~~~markdown
 # <title>
 status: active | paused | resolved
 turn: <n> · last updated: <date> by <name>
-built with: parley v0.3.1
-target: <one-paragraph statement of what "done" means>
+built with: parley v0.4
+target: <what "done" looks like — a decision, a shared understanding, a pitch landed, or
+        `open exploration — no fixed decision`. A decision is one option, not required.>
 participants: <Name (role)>, <Name (role)>, …
 
 ## Decision Target
-Concrete: the specific decision + what counts as "done".
-Exploratory: `open exploration — no fixed decision` (same flow otherwise).
+What this parley is for — concrete (a specific decision + what counts as "done") or
+`open exploration — no fixed decision`. Reaching a decision is one possible outcome, not the
+point; transmitting the thinking is.
 
 ## Synthesis (the agent's current read)
-The agent's own evolving, clearly-labeled position. Not a log restatement — a real read.
+The agent's own evolving, clearly-labeled position — a real read, not a log restatement.
+Include a short **reasoning trail**: the inflection points that moved the read, not just its
+latest state.
 
 ## Statement Log
-Attributed, chronological — summaries plus near-verbatim key quotes, not a full transcript.
-Each entry: `- [T<n> · <Name>] "…"`. The agent's own turns logged as action summaries, not
-quotes. NEVER invented.
+Attributed, chronological. Participants: summaries + near-verbatim key quotes, not a transcript.
+The agent's own turns: **reasoning entries** (what was offered, why, what it caused), not terse
+action summaries. NEVER invent a participant's words. Each entry: `- [T<n> · <Name>] …`.
+A pre-authored contingent stance is tagged (e.g. *standing position*).
 
 ## Open Questions
 - [ ] <question> — posed to: <whoever it awaits next — a name, or `open` for anyone>
 - [x] <answered question> — answered T<n> (<short answer>)
 
+## Branch Map — roads not taken & anticipated forks
+The agent's cartography of the decision space (your own voice throughout). Per road: where it
+leads (counterfactual), any present participant's pre-authored stance, your anticipation of
+who'll push it and your facilitation intent if it opens, and whether it's genuinely open.
+Map only *live, probable* forks — don't manufacture branches.
+
 ## Parked Tensions
 Deadlocks deliberately set aside, with enough context to reopen later.
 ~~~
 
-One flow handles both **concrete** and **exploratory** targets — the only difference is
-the Decision Target line. Exploration can legitimately resolve to "decided not to."
+One flow handles both **concrete** and **exploratory** targets — the only difference is the
+Decision Target line; exploration can legitimately resolve to "decided not to," or to nothing
+but a clearer map. **Keep the three "open" sections distinct:** an **Open Question** awaits a
+*specific person's answer*; a **Parked Tension** is a live disagreement set aside; the **Branch
+Map** is *your* cartography of the space — roads taken-and-closed, not-taken, or anticipated,
+with counterfactuals and your facilitation intent. The Branch Map is what lets a recipient
+*extend* the work: you can't invite someone down a road you never drew.
 
 ## Lifecycle
 
@@ -379,8 +413,9 @@ the Decision Target line. Exploration can legitimately resolve to "decided not t
   **accrete** as they take turns. At the start it's just the initiator + you — the "first 1.5
   parties" (you're the half: a participant with a position, never routed to). A fuzzy target is
   fine — mark it exploratory.
-- **Resolved:** target met → propose closure → on human confirm, the artifact becomes a
-  Decision Record (set `status: resolved`; the synthesis + final agreement are the record).
+- **Resolved:** target met → propose closure → on human confirm, set `status: resolved`; the
+  artifact becomes the finished record — a decision, an agreement, or simply the thinking fully
+  transmitted (a decision isn't required to "resolve").
 - **Paused:** a labeled stop (`status: paused`) that a cold agent can resume later.
 - **Trigger-based:** if the target names a condition for closure, watch for it.
 
